@@ -1,0 +1,17 @@
+<!-- src/app/core/layouts/main-layout/main-layout.component.html -->
+<div class="main-layout">
+  <!-- Navbar superior con suscripción al evento toggleSidebar: -->
+  <app-navbar (toggleSidebar)="toggleSidebar()"></app-navbar>
+
+  <div class="main-layout__body">
+    <!-- Sidebar con binding de lectura a la señal isSidebarCollapsed(): -->
+    <app-sidebar [isCollapsed]="isSidebarCollapsed()"></app-sidebar>
+
+    <!-- Área de contenido dinámico donde se inyectan las páginas del SaaS: -->
+    <main class="main-layout__content">
+      <div class="main-layout__container">
+        <router-outlet />
+      </div>
+    </main>
+  </div>
+</div>
